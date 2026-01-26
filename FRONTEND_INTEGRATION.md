@@ -44,6 +44,7 @@ Verify:
 node -v
 docker -v
 docker compose version
+```
 
 ## B) Clone repo + install dependencies
 
@@ -51,6 +52,7 @@ docker compose version
 git clone <BACKEND_REPO_URL>
 cd fitfriends-backend
 npm install
+```
 
 ## C) Create `.env` (REQUIRED)
 
@@ -60,12 +62,14 @@ It is **NOT committed to GitHub**, so each developer creates it locally.
 
 ```bash
 touch .env
+```
 
 ### open .env and paste:
 ```bash
 PORT=4000
 DATABASE_URL="postgresql://fitfriends:fitfriends_pw@localhost:5432/fitfriends"
 JWT_ACCESS_SECRET="fitfriends_super_secret_change_me_123456789"
+```
 
 ## D) Start PostgreSQL (Docker)
 
@@ -74,3 +78,21 @@ From the backend root folder (same place as `docker-compose.yml`):
 ```bash
 docker compose up -d
 docker ps
+```
+
+## E) Create DB tables (Prisma migrations)
+
+This applies the Prisma schema to PostgreSQL and creates the required tables.
+
+```bash
+npx prisma migrate dev
+npx prisma generate
+```
+
+## F) Start API server
+
+Run the backend in development mode (auto-restarts on code changes):
+
+```bash
+npm run dev
+```
