@@ -7,13 +7,13 @@ This document is for **any developer** (frontend or backend) to run the backend 
 ## Architecture (How everything connects)
 
 **React Frontend (Vite)**  
-→ sends HTTP requests (JSON + file upload)  
-→ **Node.js + Express API** (`http://localhost:4000`)  
-→ **Prisma ORM** (database client + schema/migrations)  
-→ **PostgreSQL** (running locally in Docker container on `localhost:5432`)
+a) sends HTTP requests (JSON + file upload)  
+b) **Node.js + Express API** (`http://localhost:4000`)  
+c) **Prisma ORM** (database client + schema/migrations)  
+d)**PostgreSQL** (running locally in Docker container on `localhost:5432`)
 
 **Photos flow**  
-Frontend uploads image → `POST /photos` → server saves file to `uploads/` → DB stores photo URL → UI loads image via `http://localhost:4000/uploads/<filename>`
+Frontend uploads image → `POST /photos` → server saves file to `uploads/` -> DB stores photo URL -> UI loads image via `http://localhost:4000/uploads/<filename>`
 
 ---
 
