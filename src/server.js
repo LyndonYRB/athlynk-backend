@@ -1,16 +1,7 @@
-import express from "express";
-import cors from "cors";
 import dotenv from "dotenv";
+import { app } from "./app.js";
 
 dotenv.config();
-
-const app = express();
-app.use(cors({ origin: true, credentials: true }));
-app.use(express.json());
-
-app.get("/health", (req, res) => {
-  res.json({ ok: true, message: "FitFriends backend is running" });
-});
 
 const port = process.env.PORT || 4000;
 app.listen(port, () => {

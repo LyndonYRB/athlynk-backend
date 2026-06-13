@@ -1,6 +1,6 @@
-# FitFriends Backend — Developer Setup + Frontend Integration
+# Athlynk Backend — Developer Setup + Frontend Integration
 
-This document is for **any developer** (frontend or backend) to run the backend locally and integrate the FitFriends UI with the API.
+This document is for **any developer** (frontend or backend) to run the backend locally and integrate the Athlynk UI with the API.
 
 ---
 
@@ -50,7 +50,7 @@ docker compose version
 
 ```bash
 git clone <BACKEND_REPO_URL>
-cd fitfriends-backend
+cd athlynk-backend
 npm install
 ```
 
